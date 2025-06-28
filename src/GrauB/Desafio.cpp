@@ -609,12 +609,14 @@ int loadTexture(string filePath, int &width, int &height)
 void desenharMapa(GLuint shaderID)
 {
 	Tile baseTile = tileset[0];
-	float mapPixelWidth = mapWidth * baseTile.dimensions.x;
-	float mapPixelHeight = mapHeight * baseTile.dimensions.y * 0.5f;  // Isométrico, então divide por 4 no Y
+	float tileW = baseTile.dimensions.x;
+	float tileH = baseTile.dimensions.y;
 
-	float xOffsetExtraWidth = 300.0f;
-	float x0 = (WIDTH - mapPixelWidth) / 2.0f + xOffsetExtraWidth;
-	float y0 = (HEIGHT - mapPixelHeight) / 2.0f;
+	float mapPixelWidth = (mapWidth + mapHeight) * tileW / 8.0f;
+	float mapPixelHeight = (mapWidth + mapHeight) * tileH / 2.0f;
+
+	float x0 = (WIDTH - mapPixelWidth) / 2.0f + tileW / 2.0f;
+	float y0 = (HEIGHT - mapPixelHeight) / 2.0f + tileH / 4.0f;
 
 	for (int i = 0; i < mapHeight; i++) {
 		for (int j = 0; j < mapWidth; j++) {
