@@ -7,7 +7,7 @@ Implementação de um jogo simples com tilemap isométrico (formato diamond), ut
 
 - Diuliano Vargas
 - Felipe Bergamo
-- Pedro Texeira
+- Pedro Teixeira Alves
 
 ## 📌 Objetivo
 
